@@ -77,7 +77,9 @@ RUN git clone git://github.com/pkathail/magic.git && \
     pip3 install .
 
 # install R packages
-RUN echo 'install.packages(c("devtools", "bookdown", "knitr", "pheatmap", "statmod", "mvoutlier", "mclust", "dplyr", "penalized", "cluster", "Seurat", "KernSmooth", "mgcv", "ROCR", "googleVis", "tidyverse", "ggplot2", "ggthemes", "ggbeeswarm", "corrplot"))' > /opt/packages1.r && \
+RUN echo 'source("https://bioconductor.org/biocLite.R")' > /opt/packages1.r && \
+    echo 'biocLite()' >> /opt/packages1.r && \
+    echo 'install.packages(c("devtools", "bookdown", "knitr", "pheatmap", "statmod", "mvoutlier", "mclust", "dplyr", "penalized", "cluster", "Seurat", "KernSmooth", "mgcv", "ROCR", "googleVis", "tidyverse", "ggplot2", "ggthemes", "ggbeeswarm", "corrplot"))' >> /opt/packages1.r && \
     echo 'devtools::install_github(c("hemberg-lab/scRNA.seq.funcs", "Vivianstats/scImpute", "theislab/kBET", "JustinaZ/pcaReduce", "tallulandrews/M3Drop", "jw156605/SLICER", "kieranrcampbell/ouija", "sinhrks/ggfortify"))' >> /opt/packages1.r && \
     Rscript /opt/packages1.r
 
