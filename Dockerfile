@@ -14,9 +14,8 @@ RUN apt-get update -y --no-install-recommends && \
         python3-pip \
         python3-tk \
         git \
-        curl
-
-#       texlive-full
+        curl \
+        texlive-full
 
 # Install FastQC
 RUN curl -fsSL http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip -o /opt/fastqc_v0.11.5.zip && \
