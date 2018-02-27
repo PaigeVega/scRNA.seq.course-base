@@ -45,7 +45,7 @@ RUN curl -fsSL https://github.com/samtools/samtools/releases/download/1.3.1/samt
 
 # Install featureCounts
 RUN curl -fsSL http://downloads.sourceforge.net/project/subread/subread-1.5.1/subread-1.5.1-Linux-x86_64.tar.gz -o /opt/subread-1.5.1-Linux-x86_64.tar.gz && \
-    tar xvzf /opt/subread-1.5.1-Linux-x86_64.tar.gz -C /opt/ && \
+    tar xvf /opt/subread-1.5.1-Linux-x86_64.tar.gz -C /opt/ && \
     ln -s /opt/subread-1.5.1-Linux-x86_64/bin/featureCounts /usr/local/bin/featureCounts && \
     rm /opt/subread-1.5.1-Linux-x86_64.tar.gz
 
